@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101013">
+  <meta name="description" content="Deine Lieblingskanäle für Yoga, Mobility und mehr.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Yoga &amp; Mobility</title>
+  <meta name="apple-mobile-web-app-title" content="Yoga &amp; Mobility">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon-180.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#kanale">Zu den Lieblingskanälen</a>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Deine Bewegungspause</p>
+      <h1 id="hero-title">Yoga <span class="title-ampersand">&amp;</span> <em>Mobility</em></h1>
+      <p>Deine Lieblingskanäle – direkt griffbereit.</p>
+    </section>
+
+    <section id="kanale" class="library" aria-labelledby="channels-title">
+      <div class="section-head library-head">
+        <h2 id="channels-title" class="visually-hidden">Lieblingskanäle</h2>
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Kanal suchen" aria-label="Kanäle suchen"></label>
+      </div>
+      <div id="filters" class="filters" aria-label="Kategorie auswählen" role="group"></div>
+      <p id="results" class="results" role="status">Kanäle werden geladen …</p>
+      <div id="channels" class="channel-grid"></div>
+    </section>
+  </main>
+  <footer class="wrap"><span aria-hidden="true">ॐ</span> Zeit für dich. Zeit für Bewegung.</footer>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+:root {
+  color-scheme: dark;
+  --page: #101013;
+  --ink: #f5f1f6;
+  --muted: #bfb7c5;
+  --line: #38323e;
+  --surface: #1b191f;
+  --accent: #edb1d7;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --serif: "Playfair Display", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 500 1rem/1.45 var(--sans); }
+a { color: inherit; text-decoration: none; }
+button, input { color: inherit; font: inherit; }
+button, .channel { cursor: pointer; }
+button { background: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.wrap { width: min(1120px, calc(100% - 72px)); margin-inline: auto; }
+.skip { position: absolute; top: 0; left: 1rem; transform: translateY(-120%); }
+.skip:focus { transform: none; z-index: 3; background: var(--surface); padding: .8rem; }
+.hero { padding: clamp(42px, 7vw, 91px) 0 clamp(34px, 5vw, 62px); text-align: center; }
+h1, h2, p { margin: 0; }
+h1, h2 { font: 600 2.5rem/1.16 var(--serif); }
+h1 { margin-block: .2em .28em; font-size: min(5.75rem, 9.8vw); line-height: 1.08; letter-spacing: -.035em; white-space: nowrap; }
+h1 em { color: var(--accent); font-style: normal; }
+.title-ampersand { color: #cbb7fa; }
+.hero p { color: var(--muted); }
+.hero .eyebrow { color: #b9b3cc; font-size: .78rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+.library { padding-bottom: 45px; }
+.search { border: 1px solid var(--line); background: var(--surface); border-radius: 50px; display: flex; align-items: center; gap: 7px; padding-inline: 14px; width: 100%; }
+.search span { font: 1.55rem/1 system-ui, sans-serif; }
+.search input { min-width: 0; width: 100%; padding: 11px 0; border: 0; background: transparent; font-size: 16px; }
+.search:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.search input:focus { outline: none; }
+.filters { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+.filters button { border: 1px solid var(--line); border-radius: 50px; min-height: 44px; padding: 7px 15px; font-weight: 600; font-size: .9rem; }
+.filters button { background: var(--category-color, #ded8e4); color: #23182a; border-color: transparent; }
+.filters button:hover { border-color: var(--ink); }
+.filters button[aria-pressed="true"] { box-shadow: inset 0 0 0 2px #23182a; border-color: var(--category-color, #ded8e4); font-weight: 700; }
+.results { color: var(--muted); min-height: 19px; margin: 16px 0 10px; font-size: .84rem; }
+.channel-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: 10px; }
+.channel { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 9px; min-width: 0; min-height: 75px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.channel:hover { border-color: var(--category-color, var(--accent)); }
+.channel:hover .channel-name { text-decoration: underline; text-underline-offset: 3px; }
+.channel-avatar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: var(--category-color, #ded8e4); color: #23182a; font: 700 .88rem/1 var(--sans); }
+[data-category="Yoga"] { --category-color: #e0b0ec; }
+[data-category="Mobility"] { --category-color: #a5dcc1; }
+[data-category="Kraft"] { --category-color: #f7ce8a; }
+[data-category="Recovery"] { --category-color: #a9cff5; }
+[data-category="Radsport"] { --category-color: #f5a984; }
+.channel-name, .channel-meta { display: block; overflow-wrap: anywhere; }
+.channel-name { font-size: 1rem; font-weight: 700; }
+.channel-meta { color: var(--muted); font-size: .79rem; margin-top: 2px; }
+footer { border-top: 1px solid var(--line); text-align: center; color: var(--muted); padding-block: 18px 26px; font-size: .87rem; }
+footer span { color: var(--accent); margin-inline-end: .4em; }
+#kanale { scroll-margin-top: 14px; }
+@media (max-width: 690px) {
+  .wrap { width: calc(100% - 32px); }
+  .channel-grid { grid-template-columns: 1fr; }
+  .filters { margin-top: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
